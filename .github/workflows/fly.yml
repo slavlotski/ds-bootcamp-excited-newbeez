@@ -4,8 +4,8 @@ on:
     branches:
       - main
 jobs:
-  deploy:
-    name: Deploy app
+  deploy-fastapi:
+    name: Deploy FastAPI 
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -29,8 +29,8 @@ jobs:
       env:
         FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
-  deploy:
-    name: Deploy TelegramBot to FLY IO
+  deploy-bot:
+    name: Deploy TelegramBot
     runs-on: ubuntu-latest
     defaults:
       run:
