@@ -6,4 +6,3 @@ fastapi==0.95.1
 Pillow==9.5.0
 prometheus-fastapi-instrumentator==6.0.0
 prometheus-client
-opencv-python-headless
