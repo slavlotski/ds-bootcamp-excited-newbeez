@@ -6,3 +6,4 @@ Components:
 1. ML model served via `FastAPI`
 2. `Telegram Bot` to communicate with a user
 3. Monitoring with `Prometheus` and `Grafana` to store and visualize metrics
+4. Deploying all services on `fly.io` 
