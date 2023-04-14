@@ -1,0 +1,38 @@
+name: Fly Deploy FastAPI service
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: |
+          cd fastapi-service/dockerdir_2
+          flyctl deploy --remote-only
+          flyctl scale memory 2048
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_IO_API_TOKEN }}
+
+
+# name: TelegramBot service
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   deploy:
+#     name: Deploy app
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: superfly/flyctl-actions/setup-flyctl@master
+#       - run: |
+#           cd bot
+#           flyctl deploy --remote-only
+#           flyctl scale memory 512
+#         env:
+#           FLY_API_TOKEN: ${{ secrets.FLY_IO_API_TOKEN }}
