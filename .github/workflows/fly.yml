@@ -13,6 +13,7 @@ jobs:
         run: cd fastapi-service/dockerdir_2
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
+          flyctl launch --auto-confirm --region lax --no-deploy --name art-expert-excited-newbeez-test -o DS_bootcamp_team_4
           flyctl deploy --remote-only -a art-expert-excited-newbeez-test
           flyctl scale memory 2048
         env:
