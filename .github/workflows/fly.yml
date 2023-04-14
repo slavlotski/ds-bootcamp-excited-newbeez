@@ -1,4 +1,4 @@
-name: Fly Deploy FastAPI service
+name: Deploy services to FLY IO 
 on:
   push:
     branches:
