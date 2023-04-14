@@ -23,7 +23,7 @@ jobs:
         mlem build docker_dir -m models/price_keras_preprocess --target dockerdir_2 --file_conf server=server.mlem
     - uses: superfly/flyctl-actions/setup-flyctl@master
     - name: Deploy to FLY IO
-      working-directory: ./fastapi-service/dockerdir_2
+#        working-directory: ./fastapi-service/dockerdir_2
     - run: |
           flyctl deploy --remote-only -a art-expert-excited-newbeez-test
           flyctl scale memory 2048
