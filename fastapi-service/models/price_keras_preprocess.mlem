@@ -97,7 +97,7 @@ requirements:
 - module: keras
   version: 2.12.0
 - module: cv2
-  package_name: opencv-python-headless
+  package_name: opencv-python
   version: 4.5.4
 - module: tensorflow
   version: 2.12.0
