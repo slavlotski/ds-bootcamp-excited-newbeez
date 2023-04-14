@@ -1,4 +1,4 @@
-name: Fly Deploy FastAPI service
+name: Deploy services to FLY IO 
 on:
   push:
     branches:
@@ -29,13 +29,6 @@ jobs:
       env:
         FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
-
-name: Fly Deploy TelegramBot service
-on:
-  push:
-    branches:
-      - main
-jobs:
   deploy:
     name: Deploy TelegramBot to FLY IO
     runs-on: ubuntu-latest
