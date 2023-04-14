@@ -17,9 +17,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      # - uses: superfly/flyctl-actions/setup-flyctl@master
-      # - name: Deploy to FLY IO
-      # - run: |
-      #     flyctl secrets set TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}
-      #     flyctl deploy --remote-only -a art-expert-excited-newbeez-bot
-      #     flyctl scale memory 512
+       - uses: superfly/flyctl-actions/setup-flyctl@master
+       - name: Deploy to FLY IO
+         run: |
+          flyctl secrets set TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}
+          flyctl deploy --remote-only -a art-expert-excited-newbeez-bot
+          flyctl scale memory 512
