@@ -1,0 +1,4 @@
+# fly.toml file generated for art-expert-excited-newbeez on 2023-04-14T14:01:45+03:00
+
+app = "art-expert-excited-newbeez"
+primary_region = "lax"
