@@ -1,15 +1,15 @@
 artifacts:
   model/data:
-    hash: b21d757326343d1da7bd866ff34d327a
-    size: 6440472
+    hash: 6054db4270952cb04742cb2b35b8b07c
+    size: 6440640
     uri: price_keras_preprocess/model
   postprocess/data.pkl:
-    hash: f33c948219663b7f84b425b49288e2ef
-    size: 359
+    hash: 4f6feca79e2ca80c993d57412bd6b30e
+    size: 383
     uri: price_keras_preprocess/postprocess
   preprocess/data.pkl:
-    hash: 5d0c5d348aae42c28969c0ddc7254a6a
-    size: 370
+    hash: 3f5fb29f0f437732eeed14cbffc6e795
+    size: 477
     uri: price_keras_preprocess/preprocess
 call_orders:
   __call__:
@@ -63,7 +63,7 @@ processors:
         returns:
           item_types:
             price:
-              dtype: float32
+              dtype: float64
               type: number
           type: dict
     type: callable
@@ -78,7 +78,7 @@ processors:
             dtype: float32
             shape:
             - null
-            - 653
+            - 489
             - 4
             type: ndarray
         name: __call__
@@ -96,5 +96,8 @@ requirements:
   version: 1.23.5
 - module: keras
   version: 2.12.0
+- module: cv2
+  package_name: opencv-python-headless
+  version: 4.5.4
 - module: tensorflow
   version: 2.12.0
