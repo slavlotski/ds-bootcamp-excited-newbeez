@@ -30,6 +30,7 @@ jobs:
         FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
   deploy-bot:
+    needs: deploy-fastapi
     name: Deploy TelegramBot
     runs-on: ubuntu-latest
     defaults:
