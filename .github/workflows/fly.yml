@@ -23,3 +23,5 @@ jobs:
           flyctl secrets set TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}
           flyctl deploy --remote-only -a art-expert-excited-newbeez-bot
           flyctl scale memory 512
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
