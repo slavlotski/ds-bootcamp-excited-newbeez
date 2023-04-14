@@ -11,19 +11,20 @@ jobs:
     #   run:
     #     working-directory: ./fastapi-service/dockerdir_2
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v2
-      # - name: Install dependencies
-        run: |
-#           python -m pip install --upgrade pip
-          pip install --upgrade pip setuptools wheel
-#          pip install "mlem[streamlit,flyio]"
-          pip install -r requirements.txt
-          mlem build docker_dir -m models/price_keras_preprocess --target dockerdir_2 --file_conf server=server.mlem
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      - name: Deploy to FLY IO
-        working-directory: ./fastapi-service/dockerdir_2
-      - run: |
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.9.6' 
+    - run: |
+        python -m pip install --upgrade pip
+        pip install --upgrade pip setuptools wheel
+        pip install "mlem[streamlit,flyio]"
+        pip install -r requirements.txt
+        mlem build docker_dir -m models/price_keras_preprocess --target dockerdir_2 --file_conf server=server.mlem
+    - uses: superfly/flyctl-actions/setup-flyctl@master
+    - name: Deploy to FLY IO
+      working-directory: ./fastapi-service/dockerdir_2
+    - run: |
           flyctl deploy --remote-only -a art-expert-excited-newbeez-test
           flyctl scale memory 2048
         env:
