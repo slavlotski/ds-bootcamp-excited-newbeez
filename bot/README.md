@@ -1,4 +1,4 @@
-#### To deploy: follow the next steps or see CD pipeline in the `.github` folder
+#### To deploy the service: follow the next steps or see CD pipeline in the `.github` folder
 
 1. Launch and create an app on your `fly.io` account or organization 
 2. Set up your telegram token
