@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
 jobs:
   deploy:
     name: Deploy app
@@ -19,12 +23,12 @@ jobs:
         pip install "mlem[streamlit,flyio]"
         pip install -r requirements.txt
         mlem build docker_dir -m ./models/price_keras_preprocess --target dockerdir_2 --file_conf server=server.mlem
-    # - uses: superfly/flyctl-actions/setup-flyctl@master
-    # - name: Deploy to FLY IO
-    # - run: flyctl deploy --remote-only -a art-expert-excited-newbeez-test
-#          # flyctl scale memory 2048
-      # env:
-      #   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    - uses: superfly/flyctl-actions/setup-flyctl@master
+    - name: Deploy to FLY IO
+      working-directory: ./fastapi-service/dockerdir_2
+      run: |
+        flyctl deploy --remote-only -a art-expert-excited-newbeez-test
+        flyctl scale memory 2048
 
 
 # name: TelegramBot service
