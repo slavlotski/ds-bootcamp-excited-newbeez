@@ -1,15 +1,15 @@
-To deploy:
+####To deploy: use next steps or see CD pipeline in `.github` folder
 
-1. set telegram token
-
+1. Launch and create an app on your `fly.io` account or organization 
+2. Set up your telegram token
 ```sh
-$ flyctl secrets set TELEGRAM_TOKEN=tokenvalue
+$ flyctl secrets set TELEGRAM_TOKEN=`$your_token_value`
 ```
-
-2. change appname in fly.toml to your app name (will be created automatically)
-
-3. deploy
-
+3. Deploy to `fly.io`
 ```sh
-$ flyctl deploy
+$ flyctl deploy --remote-only -a art-expert-excited-newbeez-bot
+```
+4. Scale service's memory
+```sh
+$ flyctl scale memory 512
 ```
