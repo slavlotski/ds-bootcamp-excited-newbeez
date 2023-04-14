@@ -10,8 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Setup working directory
+        working-directory: ./fastapi-service/dockerdir_2
       - run: |
-          flyctl launch --auto-confirm --region lax --no-deploy --name art-expert-excited-newbeez-test -o DS_bootcamp_team_4 --dockerfile fastapi-service/dockerdir_2/Dockerfile
           flyctl deploy --remote-only -a art-expert-excited-newbeez-test
           flyctl scale memory 2048
         env:
