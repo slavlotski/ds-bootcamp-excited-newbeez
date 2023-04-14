@@ -7,9 +7,9 @@ jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
-    # defaults:
-    #   run:
-    #     working-directory: ./fastapi-service/dockerdir_2
+    defaults:
+      run:
+        working-directory: ./fastapi-service
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
