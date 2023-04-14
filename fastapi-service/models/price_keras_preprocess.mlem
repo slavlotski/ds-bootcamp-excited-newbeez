@@ -93,8 +93,8 @@ processors:
     type: callable
 requirements:
 - module: numpy
-  version: 1.21.6
+  version: 1.23.5
 - module: keras
-  version: 2.6.0
+  version: 2.12.0
 - module: tensorflow
-  version: 2.6.4
+  version: 2.12.0
