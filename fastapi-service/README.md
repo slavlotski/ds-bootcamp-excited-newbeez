@@ -4,17 +4,19 @@
 2. Install dependencies
 ```python
 python -m pip install --upgrade pip
+pip install --upgrade pip setuptools wheel
+pip install "mlem[streamlit,flyio]"
 pip install -r requirements.txt
 ```
-3. Set up your telegram token
-```sh
-$ flyctl secrets set TELEGRAM_TOKEN=`$your_token_value`
+3. Build dockerdir via command: 
+```python
+mlem build docker_dir -m ./models/price_keras_preprocess --target dockerdir --file_conf server=server.mlem
 ```
 4. Deploy to `fly.io`
 ```sh
-$ flyctl deploy --remote-only -a art-expert-excited-newbeez-bot
+$ flyctl deploy --remote-only -a art-expert-excited-newbeez
 ```
 5. Scale service's memory
 ```sh
-$ flyctl scale memory 512
+$ flyctl scale memory 2048
 ```
