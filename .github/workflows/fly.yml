@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
 jobs:
   deploy:
     name: Deploy app
@@ -27,8 +31,6 @@ jobs:
     - run: |
         flyctl deploy --remote-only -a art-expert-excited-newbeez-test
         flyctl scale memory 2048
-      env:
-        FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
 
 # name: TelegramBot service
