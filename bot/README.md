@@ -1,3 +1,6 @@
+#### Workflow our Telegram bot 
+![Figma diagram](https://cdn.discordapp.com/attachments/1094920487450198046/1096731641952612502/image.png)
+
 #### To deploy the service: follow the next steps or see CI/CD pipeline in the `.github` folder
 
 1. Launch and create an app on your `fly.io` account or organization 
