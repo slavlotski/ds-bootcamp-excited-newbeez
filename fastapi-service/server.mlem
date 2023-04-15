@@ -5,10 +5,5 @@ middlewares:
       - "lang_metric.random_value"
       - "lang_metric.http_requested_languages_total"
       - "lang_metric.image_middle_pixel_value"
-      - "monitoring.request_size"
-      - "monitoring.response_size"
-      - "monitoring.latency"
-      - "monitoring.requests"
-      - "monitoring.regression_model_output"
 request_serializer:
   type: pil_numpy
