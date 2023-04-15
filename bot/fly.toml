@@ -1,16 +1,6 @@
-# fly.toml file generated for art-expert on 2023-01-14T21:03:20+06:00
+# fly.toml file generated for art-expert-excited-newbeez-bot on 2023-04-15T10:08:19+03:00
 
 app = "art-expert-excited-newbeez-bot"
 kill_signal = "SIGINT"
 kill_timeout = 5
-
-[env]
-
-[experimental]
-  auto_rollback = true
-
-[processes]
-  sleep = "sleep infinity"
-
-[[services]]
-  processes = ["sleep"]
+primary_region = "lax"
