@@ -1,14 +1,14 @@
 artifacts:
   model/data:
-    hash: b21d757326343d1da7bd866ff34d327a
-    size: 6440472
+    hash: 45bdc9bdf33a58cdc4295b7500735d09
+    size: 6441704
     uri: price_keras_preprocess/model
   postprocess/data.pkl:
-    hash: f33c948219663b7f84b425b49288e2ef
-    size: 359
+    hash: fd46337a35a6b9bdc6dbc9ee1fc0aba3
+    size: 383
     uri: price_keras_preprocess/postprocess
   preprocess/data.pkl:
-    hash: 5d0c5d348aae42c28969c0ddc7254a6a
+    hash: 684f287e2c70fd6e9d8f75f7bfa71cf9
     size: 370
     uri: price_keras_preprocess/preprocess
 call_orders:
@@ -63,7 +63,7 @@ processors:
         returns:
           item_types:
             price:
-              dtype: float32
+              dtype: float64
               type: number
           type: dict
     type: callable
@@ -78,7 +78,7 @@ processors:
             dtype: float32
             shape:
             - null
-            - 653
+            - 489
             - 4
             type: ndarray
         name: __call__
