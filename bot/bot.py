@@ -12,7 +12,7 @@ import requests #<--added
 
 # create a telegram bot and paste it here, or use `flyctl secrets set TELEGRAM_TOKEN=token` to set it secretly
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "YOUR_TOKEN")
-WIKI_ART_TOKEN = os.getenv("WIKI_ART_TOKEN", "YOUR_TOKEN")
+WIKI_ART_TOKEN = "Bearer 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"
 API_URL = "https://api-inference.huggingface.co/models/davanstrien/convnext-tiny-224-wikiart"
 headers = {"Authorization": WIKI_ART_TOKEN}
 # add URL of you REST API app here
